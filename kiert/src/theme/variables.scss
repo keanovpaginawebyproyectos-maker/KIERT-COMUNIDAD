@@ -1,0 +1,39 @@
+/* ============================================
+   KIERT - Variables de Tema
+   Paleta de marca + Colores Ionic base
+   ============================================ */
+
+:root {
+  /* ---------- Paleta KIERT ---------- */
+  --kiert-white: #ffffff;
+  --kiert-rosa: #cb7a83;
+  --kiert-vino: #562127;
+  --kiert-gris-oscuro: #595552;
+  --kiert-gris-medio: #78756e;
+  --kiert-negro: #000000;
+
+  /* ---------- Colores Ionic ---------- */
+  --ion-color-primary: #cb7a83;
+  --ion-color-primary-rgb: 203, 122, 131;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #b36b73;
+  --ion-color-primary-tint: #d0888f;
+
+  --ion-color-secondary: #562127;
+  --ion-color-secondary-rgb: 86, 33, 39;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #4b1d22;
+  --ion-color-secondary-tint: #67373d;
+
+  --ion-color-tertiary: #78756e;
+  --ion-color-tertiary-rgb: 120, 117, 110;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #6a6761;
+  --ion-color-tertiary-tint: #86837d;
+
+  /* ⚠️ IMPORTANTE: NO definir aquí --ion-background-color ni --ion-text-color
+     porque rompen el cambio de tema. Se controlan desde global.scss. */
+}

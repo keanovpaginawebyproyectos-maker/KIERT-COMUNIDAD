@@ -1,0 +1,348 @@
+/* ============================================
+   KIERT - Productos Styles
+   Adaptado a tema claro / oscuro
+   ============================================ */
+
+:host {
+  display: block;
+  background: var(--kiert-fondo, #ffffff);
+  color: var(--kiert-texto, #1a1a1a);
+}
+
+.kiert-content {
+  --background: var(--kiert-fondo, #ffffff);
+  --color: var(--kiert-texto, #1a1a1a);
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.kiert-header ion-title {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   CABECERA
+   ============================================ */
+.productos-head {
+  padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 64px) clamp(24px, 4vw, 40px);
+  text-align: center;
+  background:
+    radial-gradient(1000px 400px at 90% 0%, rgba(196, 132, 145, 0.12), transparent 60%),
+    var(--kiert-fondo, #ffffff);
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(196, 132, 145, 0.14);
+    border: 1px solid rgba(196, 132, 145, 0.3);
+    color: var(--kiert-rosa, #c48491);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--kiert-texto, #1a1a1a);
+
+    span {
+      background: linear-gradient(
+        135deg,
+        var(--kiert-rosa, #c48491),
+        var(--kiert-vino, #562127)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    line-height: 1.65;
+    color: var(--kiert-texto-secundario, #4a4a4a);
+  }
+}
+
+/* ============================================
+   GRID PRODUCTOS
+   ============================================ */
+.productos-grid {
+  padding: 0 clamp(16px, 4vw, 48px) clamp(40px, 6vw, 72px);
+
+  ion-col {
+    padding: 12px;
+    display: flex;
+  }
+}
+
+/* ============================================
+   CARD PRODUCTO
+   ============================================ */
+.producto-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--kiert-superficie, #ffffff);
+  border: 1px solid var(--kiert-borde, #e5e5e5);
+  border-radius: 16px;
+  overflow: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  will-change: transform;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(86, 33, 39, 0.14);
+    border-color: rgba(196, 132, 145, 0.45);
+
+    .producto-card__media ion-img {
+      transform: scale(1.05);
+    }
+
+    .producto-card__icon {
+      background: var(--kiert-rosa, #c48491);
+      color: #ffffff;
+    }
+
+    .producto-card__cta svg {
+      transform: translateX(4px);
+    }
+  }
+
+  /* ----- MEDIA ----- */
+  &__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(
+      135deg,
+      rgba(196, 132, 145, 0.15),
+      rgba(86, 33, 39, 0.12)
+    );
+    overflow: hidden;
+
+    ion-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      --background: transparent;
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    color: var(--kiert-vino, #562127);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* ----- BODY ----- */
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 24px 22px 22px;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    background: rgba(196, 132, 145, 0.14);
+    color: var(--kiert-vino, #562127);
+    margin-bottom: 16px;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 1.18rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    color: var(--kiert-vino, #562127);
+  }
+
+  &__desc {
+    margin: 0 0 18px;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--kiert-texto-secundario, #4a4a4a);
+  }
+
+  /* ----- FEATURES ----- */
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--kiert-texto, #1a1a1a);
+      font-weight: 500;
+
+      svg {
+        flex-shrink: 0;
+        color: var(--kiert-rosa, #c48491);
+        background: rgba(196, 132, 145, 0.12);
+        border-radius: 50%;
+        padding: 3px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  /* ----- CTA ----- */
+  &__cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding-top: 16px;
+    border-top: 1px solid var(--kiert-borde, #ededed);
+    color: var(--kiert-vino, #562127);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    transition: color 0.25s ease;
+
+    svg {
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      color: var(--kiert-rosa, #c48491);
+    }
+  }
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+.productos-cta {
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px);
+  background:
+    linear-gradient(135deg, rgba(86, 33, 39, 0.97), rgba(120, 45, 55, 0.97)),
+    var(--kiert-vino, #562127);
+  color: #ffffff;
+
+  &__inner {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0 auto 26px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 480px;
+  }
+
+  &__button {
+    --background: #ffffff;
+    --background-hover: #f6f6f6;
+    --color: var(--kiert-vino, #562127);
+    --border-radius: 10px;
+    --padding-start: 24px;
+    --padding-end: 20px;
+    --padding-top: 14px;
+    --padding-bottom: 14px;
+    max-width: 320px;
+    margin: 0 auto;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: none;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+
+    svg {
+      margin-left: 8px;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .producto-card__body {
+    padding: 20px 18px 18px;
+  }
+
+  .producto-card__title {
+    font-size: 1.08rem;
+  }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

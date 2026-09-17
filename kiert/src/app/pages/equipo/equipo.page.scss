@@ -1,0 +1,288 @@
+/* ============================================
+   KIERT - Equipo / Comunidad Startup
+   ============================================ */
+
+:host {
+  display: block;
+  background: var(--kiert-fondo, #ffffff);
+  color: var(--kiert-texto, #1a1a1a);
+}
+
+.kiert-content {
+  --background: var(--kiert-fondo, #ffffff);
+  --color: var(--kiert-texto, #1a1a1a);
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.kiert-header ion-title {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   SECCIÓN COMUNIDAD
+   ============================================ */
+.comunidad {
+  padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px);
+  text-align: center;
+  background:
+    radial-gradient(1000px 500px at 50% 0%, rgba(196, 132, 145, 0.12), transparent 60%),
+    var(--kiert-fondo, #ffffff);
+
+  &__logo {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(
+      135deg,
+      rgba(196, 132, 145, 0.18),
+      rgba(86, 33, 39, 0.14)
+    );
+    border: 2px solid rgba(196, 132, 145, 0.35);
+    box-shadow: 0 12px 32px rgba(86, 33, 39, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    &:hover {
+      transform: scale(1.04);
+      box-shadow: 0 16px 40px rgba(86, 33, 39, 0.2);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__logo-fallback {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--kiert-vino, #562127);
+
+    svg {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(196, 132, 145, 0.14);
+    border: 1px solid rgba(196, 132, 145, 0.3);
+    color: var(--kiert-rosa, #c48491);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin: 0 0 18px;
+    font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--kiert-texto, #1a1a1a);
+
+    span {
+      background: linear-gradient(
+        135deg,
+        var(--kiert-rosa, #c48491),
+        var(--kiert-vino, #562127)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+
+  &__desc {
+    margin: 0 auto 48px;
+    max-width: 640px;
+    font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+    line-height: 1.7;
+    color: var(--kiert-texto-secundario, #4a4a4a);
+  }
+
+  &__valores {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* ============================================
+   CARD DE VALOR
+   ============================================ */
+.valor {
+  background: var(--kiert-superficie, #ffffff);
+  border: 1px solid var(--kiert-borde, #e5e5e5);
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(86, 33, 39, 0.14);
+    border-color: rgba(196, 132, 145, 0.45);
+
+    .valor__icon {
+      background: var(--kiert-rosa, #c48491);
+      color: #ffffff;
+      transform: scale(1.06);
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: rgba(196, 132, 145, 0.14);
+    color: var(--kiert-vino, #562127);
+    margin-bottom: 18px;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__titulo {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--kiert-vino, #562127);
+    letter-spacing: -0.2px;
+  }
+
+  &__texto {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--kiert-texto-secundario, #4a4a4a);
+  }
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+.equipo-cta {
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px);
+  background:
+    linear-gradient(135deg, rgba(86, 33, 39, 0.97), rgba(120, 45, 55, 0.97)),
+    var(--kiert-vino, #562127);
+  color: #ffffff;
+
+  &__inner {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+  }
+
+  p {
+    margin: 0 auto 26px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 480px;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: #ffffff;
+    color: var(--kiert-vino, #562127);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    svg {
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .comunidad__logo {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 22px;
+  }
+
+  .valor {
+    padding: 22px 18px;
+  }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

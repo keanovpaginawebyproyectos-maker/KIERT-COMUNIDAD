@@ -1,0 +1,7 @@
+{
+  "name": "kiert",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

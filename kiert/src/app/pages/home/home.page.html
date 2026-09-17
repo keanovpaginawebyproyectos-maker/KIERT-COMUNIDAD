@@ -1,0 +1,254 @@
+<ion-header [translucent]="true" class="kiert-header">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>KIERT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="kiert-content">
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__badge">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="14"
+          height="14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+        Software a medida
+      </span>
+
+      <h1 class="hero__title">
+        Bienvenido a <span>KIERT</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        Startup de desarrollo de software. Creamos productos digitales a la
+        medida de tu negocio, con calidad, escalabilidad y diseño.
+      </p>
+
+      <div class="hero__actions">
+        <ion-button
+          color="secondary"
+          routerLink="/productos"
+          expand="block"
+          class="hero__cta"
+        >
+          Ver productos
+          <svg
+            slot="end"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </ion-button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       VIDEO - MARCO CENTRADO CON LOGO
+       ============================================ -->
+  <section class="video">
+    <header class="video__head">
+      <h2 class="video__title">Conoce nuestro trabajo</h2>
+      <p class="video__subtitle">
+        Un vistazo rápido a lo que hacemos en KIERT.
+      </p>
+    </header>
+
+    <div class="video__frame">
+      <!-- LOGO superpuesto dentro del marco -->
+      <div class="video__logo" aria-hidden="true">
+        <img
+          src="assets/images/logo/logo.png"
+          alt="Logo KIERT"
+          loading="lazy"
+          (error)="onLogoError($event)"
+        />
+        <div class="video__logo-fallback">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="26"
+            height="26"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 6v6l4 2" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- VIDEO -->
+      <video
+        class="video__player"
+        controls
+        preload="metadata"
+        playsinline
+        poster="assets/img/video-poster.jpg"
+      >
+        <source
+          src="assets/video/Polleria Yaki - Sistema de Gestión - Brave 2026-09-17 00-08-24.mp4"
+          type="video/mp4"
+        />
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICIOS
+       ============================================ -->
+  <section class="servicios">
+    <header class="servicios__head">
+      <h2>¿Qué ofrecemos?</h2>
+      <p>Soluciones digitales integrales para impulsar tu negocio.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Card 1: Desarrollo Web -->
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="16 18 22 12 16 6" />
+            <polyline points="8 6 2 12 8 18" />
+          </svg>
+        </div>
+        <h3>Desarrollo Web</h3>
+        <p>Aplicaciones modernas construidas con Angular e Ionic.</p>
+      </article>
+
+      <!-- Card 2: Softwares de Escritorio -->
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+        </div>
+        <h3>Softwares de Escritorio</h3>
+        <p>Sistemas nativos para Windows, Linux y macOS con alto rendimiento.</p>
+      </article>
+
+      <!-- Card 3: Backend & API -->
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <ellipse cx="12" cy="5" rx="9" ry="3" />
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+          </svg>
+        </div>
+        <h3>Backend &amp; API</h3>
+        <p>Servicios Node.js con MySQL, seguros y escalables.</p>
+      </article>
+
+      <!-- Card 4: Consultoría -->
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.8 6.5 19.5l1-6.3L3 8.9 9 8z" />
+          </svg>
+        </div>
+        <h3>Consultoría</h3>
+        <p>Asesoría técnica especializada para tu proyecto digital.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA FINAL
+       ============================================ -->
+  <section class="cta">
+    <div class="cta__inner">
+      <h2>¿Listo para construir algo grande?</h2>
+      <p>Hablemos de tu idea y convirtámosla en un producto real.</p>
+      <ion-button
+        color="primary"
+        routerLink="/contacto"
+        expand="block"
+        class="cta__button"
+      >
+        Contáctanos
+        <svg
+          slot="end"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </ion-button>
+    </div>
+  </section>
+</ion-content>

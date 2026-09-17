@@ -1,0 +1,492 @@
+/* ============================================
+   KIERT - Home Styles
+   Diseño profesional, responsive y optimizado
+   ============================================ */
+
+:host {
+  display: block;
+  background: var(--kiert-fondo, #ffffff);
+  color: var(--kiert-texto, #1a1a1a);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.kiert-header {
+  ion-toolbar {
+    --min-height: 60px;
+    letter-spacing: 0.5px;
+  }
+
+  ion-title {
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+}
+
+/* ============================================
+   CONTENT
+   ============================================ */
+.kiert-content {
+  --background: var(--kiert-fondo, #ffffff);
+  --color: var(--kiert-texto, #1a1a1a);
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(196, 132, 145, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, rgba(86, 33, 39, 0.08), transparent 55%),
+    var(--kiert-fondo, #ffffff);
+  text-align: center;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: min(560px, 80%);
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--kiert-borde, #d9d9d9),
+      transparent
+    );
+  }
+
+  &__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    animation: fadeUp 0.6s ease-out both;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(196, 132, 145, 0.14);
+    border: 1px solid rgba(196, 132, 145, 0.3);
+    color: var(--kiert-rosa, #c48491);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: clamp(1.85rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--kiert-texto, #1a1a1a);
+    letter-spacing: -0.5px;
+
+    span {
+      background: linear-gradient(
+        135deg,
+        var(--kiert-rosa, #c48491),
+        var(--kiert-vino, #562127)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      font-weight: 800;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 auto 32px;
+    max-width: 560px;
+    font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+    line-height: 1.65;
+    color: var(--kiert-texto-secundario, #4a4a4a);
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cta {
+    --border-radius: 10px;
+    --padding-start: 24px;
+    --padding-end: 20px;
+    --padding-top: 14px;
+    --padding-bottom: 14px;
+    max-width: 320px;
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: none;
+    box-shadow: 0 6px 20px rgba(196, 132, 145, 0.35);
+
+    svg {
+      margin-left: 8px;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+/* ============================================
+   VIDEO - MARCO CENTRADO CON LOGO
+   ============================================ */
+.video {
+  padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 64px);
+  background: var(--kiert-fondo, #ffffff);
+  text-align: center;
+
+  &__head {
+    max-width: 640px;
+    margin: 0 auto 32px;
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    color: var(--kiert-vino, #562127);
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--kiert-texto-secundario, #4a4a4a);
+  }
+
+  /* MARCO DEL VIDEO */
+  &__frame {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--kiert-borde, #e5e5e5);
+    box-shadow:
+      0 20px 50px rgba(86, 33, 39, 0.15),
+      0 4px 12px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 16 / 9;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow:
+        0 24px 60px rgba(86, 33, 39, 0.22),
+        0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  /* LOGO superpuesto dentro del marco */
+  &__logo {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__logo-fallback {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--kiert-vino, #562127);
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  /* EL VIDEO se adapta al marco */
+  &__player {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #000;
+    outline: none;
+  }
+}
+
+/* ============================================
+   SERVICIOS
+   ============================================ */
+.servicios {
+  padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 64px);
+  background: var(--kiert-fondo, #ffffff);
+
+  &__head {
+    max-width: 640px;
+    margin: 0 auto 48px;
+    text-align: center;
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      font-weight: 800;
+      color: var(--kiert-vino, #562127);
+      letter-spacing: -0.4px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--kiert-texto-secundario, #4a4a4a);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--kiert-superficie, #ffffff);
+    border: 1px solid var(--kiert-borde, #e5e5e5);
+    border-radius: 14px;
+    padding: 28px 24px;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    will-change: transform;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      padding: 1px;
+      background: linear-gradient(
+        135deg,
+        transparent 40%,
+        rgba(196, 132, 145, 0.6) 100%
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(86, 33, 39, 0.12);
+      border-color: transparent;
+
+      &::before {
+        opacity: 1;
+      }
+
+      .card__icon {
+        background: var(--kiert-rosa, #c48491);
+        color: #ffffff;
+        transform: scale(1.05);
+      }
+    }
+
+    &__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(196, 132, 145, 0.12);
+      color: var(--kiert-vino, #562127);
+      margin-bottom: 20px;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--kiert-vino, #562127);
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: var(--kiert-texto-secundario, #4a4a4a);
+    }
+  }
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+.cta {
+  padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 64px);
+  background:
+    linear-gradient(135deg, rgba(86, 33, 39, 0.97), rgba(120, 45, 55, 0.97)),
+    var(--kiert-vino, #562127);
+  color: #ffffff;
+
+  &__inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 0 0 14px;
+    font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0 auto 28px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 480px;
+  }
+
+  &__button {
+    --background: #ffffff;
+    --background-hover: #f6f6f6;
+    --color: var(--kiert-vino, #562127);
+    --border-radius: 10px;
+    --padding-start: 26px;
+    --padding-end: 20px;
+    --padding-top: 14px;
+    --padding-bottom: 14px;
+    max-width: 300px;
+    margin: 0 auto;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: none;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+
+    svg {
+      margin-left: 8px;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .video__frame {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .video__logo {
+    width: 42px;
+    height: 42px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

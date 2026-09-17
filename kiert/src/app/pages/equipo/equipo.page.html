@@ -1,0 +1,121 @@
+<ion-header [translucent]="true" class="kiert-header">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Equipo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="kiert-content">
+  <section class="comunidad">
+    <!-- ESPACIO PARA EL LOGO -->
+    <div class="comunidad__logo">
+    <img
+  [src]="logo.imagen"
+  [alt]="logo.alt"
+  loading="lazy"
+  (error)="onLogoError($event)"
+/>
+      <div class="comunidad__logo-fallback" aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="52"
+          height="52"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- BADGE -->
+    <span class="comunidad__badge">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="14"
+        height="14"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.8 6.5 19.5l1-6.3L3 8.9 9 8z" />
+      </svg>
+      Comunidad KIERT
+    </span>
+
+    <!-- TÍTULO -->
+    <h1 class="comunidad__title">
+      Somos una <span>comunidad startup</span>
+    </h1>
+
+    <!-- DESCRIPCIÓN -->
+    <p class="comunidad__desc">
+      {{ comunidad.descripcion }}
+    </p>
+
+    <!-- VALORES -->
+    <div class="comunidad__valores">
+      <article class="valor" *ngFor="let v of comunidad.valores">
+        <div class="valor__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h3 class="valor__titulo">{{ v.titulo }}</h3>
+        <p class="valor__texto">{{ v.texto }}</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="equipo-cta">
+    <div class="equipo-cta__inner">
+      <h2>¿Tienes un proyecto en mente?</h2>
+      <p>
+        Construyámoslo juntos. Trabajamos en equipo para entregarte la mejor
+        solución digital.
+      </p>
+      <a class="equipo-cta__button" routerLink="/contacto">
+        Contáctanos
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</ion-content>

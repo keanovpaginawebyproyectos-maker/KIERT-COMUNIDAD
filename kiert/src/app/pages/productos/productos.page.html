@@ -1,0 +1,167 @@
+<ion-header [translucent]="true" class="kiert-header">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="kiert-content">
+  <!-- CABECERA -->
+  <section class="productos-head">
+    <span class="productos-head__badge">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="14"
+        height="14"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+        <line x1="12" y1="22.08" x2="12" y2="12" />
+      </svg>
+      Catálogo
+    </span>
+
+    <h1 class="productos-head__title">
+      Nuestros <span>productos</span>
+    </h1>
+
+    <p class="productos-head__subtitle">
+      Soluciones digitales diseñadas a la medida de cada proyecto. Calidad,
+      rendimiento y escalabilidad garantizados.
+    </p>
+  </section>
+
+  <!-- GRID DE PRODUCTOS -->
+  <section class="productos-grid">
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col
+          size="12"
+          size-sm="6"
+          size-lg="4"
+          *ngFor="let p of productos"
+        >
+          <article class="producto-card">
+            <!-- IMAGEN / PLACEHOLDER -->
+            <div class="producto-card__media">
+              <ion-img
+                [src]="p.imagen"
+                [alt]="p.nombre"
+                loading="lazy"
+              ></ion-img>
+
+              <div class="producto-card__tag">
+                {{ p.categoria }}
+              </div>
+            </div>
+
+            <!-- CONTENIDO -->
+            <div class="producto-card__body">
+              <div class="producto-card__icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+
+              <h2 class="producto-card__title">{{ p.nombre }}</h2>
+
+              <p class="producto-card__desc">{{ p.descripcion }}</p>
+
+              <ul class="producto-card__features">
+                <li *ngFor="let f of p.caracteristicas">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  {{ f }}
+                </li>
+              </ul>
+
+              <a class="producto-card__cta" routerLink="/contacto">
+                Solicitar información
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="productos-cta">
+    <div class="productos-cta__inner">
+      <h2>¿No encuentras lo que buscas?</h2>
+      <p>
+        Desarrollamos soluciones personalizadas según las necesidades de tu
+        negocio.
+      </p>
+      <ion-button
+        color="primary"
+        routerLink="/contacto"
+        expand="block"
+        class="productos-cta__button"
+      >
+        Hablemos de tu proyecto
+        <svg
+          slot="end"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </ion-button>
+    </div>
+  </section>
+</ion-content>
