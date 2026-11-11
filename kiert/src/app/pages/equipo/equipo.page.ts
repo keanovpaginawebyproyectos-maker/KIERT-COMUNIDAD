@@ -32,9 +32,9 @@ export class EquipoPage {
   };
 
   comunidad = {
-    titulo: 'Somos una comunidad startup',
+    titulo: 'Somos un equipo apasionado por la tecnología',
     descripcion:
-      'En KIERT trabajamos como un equipo unido. Cada proyecto lo construimos en grupo, combinando talento, experiencia y pasión por la tecnología para entregar resultados de la mejor calidad.',
+      'KIERT nació de la idea de un grupo de amigos apasionados por la tecnología. Juntos combinamos nuestras habilidades para desarrollar software de calidad, crecer como equipo y ayudar a otros negocios a digitalizarse.',
     valores: [
       {
         titulo: 'Trabajo en equipo',

@@ -1,12 +1,14 @@
 /* ============================================
    KIERT - Home Styles
-   Diseño profesional, responsive y optimizado
+   Diseño estático, sin animaciones, 100% responsive
+   Paleta: Verde Menta + Negro/Blanco
+   Optimizado para 3 tarjetas de servicios
    ============================================ */
 
 :host {
   display: block;
-  background: var(--kiert-fondo, #ffffff);
-  color: var(--kiert-texto, #1a1a1a);
+  background: var(--kiert-fondo, #0f0f12);
+  color: var(--kiert-texto, #f5f5f7);
 }
 
 /* ============================================
@@ -28,8 +30,8 @@
    CONTENT
    ============================================ */
 .kiert-content {
-  --background: var(--kiert-fondo, #ffffff);
-  --color: var(--kiert-texto, #1a1a1a);
+  --background: var(--kiert-fondo, #0f0f12);
+  --color: var(--kiert-texto, #f5f5f7);
   --padding-start: 0;
   --padding-end: 0;
   --padding-top: 0;
@@ -41,11 +43,11 @@
    ============================================ */
 .hero {
   position: relative;
-  padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px);
+  padding: clamp(32px, 6vw, 96px) clamp(16px, 5vw, 64px);
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(196, 132, 145, 0.12), transparent 60%),
-    radial-gradient(900px 500px at 0% 100%, rgba(86, 33, 39, 0.08), transparent 55%),
-    var(--kiert-fondo, #ffffff);
+    radial-gradient(1200px 600px at 80% -10%, rgba(74, 222, 128, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, rgba(74, 222, 128, 0.04), transparent 55%),
+    var(--kiert-fondo, #0f0f12);
   text-align: center;
   overflow: hidden;
 
@@ -60,7 +62,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      var(--kiert-borde, #d9d9d9),
+      var(--kiert-borde, #2a2a30),
       transparent
     );
   }
@@ -68,7 +70,6 @@
   &__inner {
     max-width: 760px;
     margin: 0 auto;
-    animation: fadeUp 0.6s ease-out both;
   }
 
   &__badge {
@@ -77,10 +78,10 @@
     gap: 8px;
     padding: 6px 14px;
     border-radius: 999px;
-    background: rgba(196, 132, 145, 0.14);
-    border: 1px solid rgba(196, 132, 145, 0.3);
-    color: var(--kiert-rosa, #c48491);
-    font-size: 0.78rem;
+    background: rgba(74, 222, 128, 0.14);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    color: var(--kiert-menta, #4ade80);
+    font-size: clamp(0.65rem, 1.5vw, 0.78rem);
     font-weight: 600;
     letter-spacing: 0.6px;
     text-transform: uppercase;
@@ -88,22 +89,24 @@
 
     svg {
       flex-shrink: 0;
+      width: clamp(14px, 2vw, 18px);
+      height: clamp(14px, 2vw, 18px);
     }
   }
 
   &__title {
     margin: 0 0 16px;
-    font-size: clamp(1.85rem, 4vw, 2.75rem);
+    font-size: clamp(1.5rem, 5vw, 2.75rem);
     font-weight: 800;
     line-height: 1.15;
-    color: var(--kiert-texto, #1a1a1a);
+    color: var(--kiert-texto, #f5f5f7);
     letter-spacing: -0.5px;
 
     span {
       background: linear-gradient(
         135deg,
-        var(--kiert-rosa, #c48491),
-        var(--kiert-vino, #562127)
+        var(--kiert-menta, #4ade80),
+        var(--kiert-menta-hover, #22c55e)
       );
       -webkit-background-clip: text;
       background-clip: text;
@@ -116,14 +119,16 @@
   &__subtitle {
     margin: 0 auto 32px;
     max-width: 560px;
-    font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+    font-size: clamp(0.9rem, 2vw, 1.08rem);
     line-height: 1.65;
-    color: var(--kiert-texto-secundario, #4a4a4a);
+    color: var(--kiert-texto-secundario, #b8b8be);
+    padding: 0 8px;
   }
 
   &__actions {
     display: flex;
     justify-content: center;
+    padding: 0 16px;
   }
 
   &__cta {
@@ -137,15 +142,11 @@
     font-weight: 600;
     letter-spacing: 0.4px;
     text-transform: none;
-    box-shadow: 0 6px 20px rgba(196, 132, 145, 0.35);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.35);
+    font-size: clamp(0.85rem, 2vw, 1rem);
 
     svg {
       margin-left: 8px;
-      transition: transform 0.25s ease;
-    }
-
-    &:hover svg {
-      transform: translateX(4px);
     }
   }
 }
@@ -154,31 +155,31 @@
    VIDEO - MARCO CENTRADO CON LOGO
    ============================================ */
 .video {
-  padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 64px);
-  background: var(--kiert-fondo, #ffffff);
+  padding: clamp(32px, 6vw, 88px) clamp(16px, 5vw, 64px);
+  background: var(--kiert-fondo, #0f0f12);
   text-align: center;
 
   &__head {
     max-width: 640px;
     margin: 0 auto 32px;
+    padding: 0 8px;
   }
 
   &__title {
     margin: 0 0 10px;
-    font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+    font-size: clamp(1.2rem, 3vw, 1.85rem);
     font-weight: 800;
     letter-spacing: -0.4px;
-    color: var(--kiert-vino, #562127);
+    color: var(--kiert-menta, #4ade80);
   }
 
   &__subtitle {
     margin: 0;
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.6;
-    color: var(--kiert-texto-secundario, #4a4a4a);
+    color: var(--kiert-texto-secundario, #b8b8be);
   }
 
-  /* MARCO DEL VIDEO */
   &__frame {
     position: relative;
     width: 100%;
@@ -187,21 +188,13 @@
     border-radius: 16px;
     overflow: hidden;
     background: #000;
-    border: 1px solid var(--kiert-borde, #e5e5e5);
+    border: 1px solid var(--kiert-borde, #2a2a30);
     box-shadow:
-      0 20px 50px rgba(86, 33, 39, 0.15),
-      0 4px 12px rgba(0, 0, 0, 0.08);
+      0 20px 50px rgba(74, 222, 128, 0.1),
+      0 4px 12px rgba(0, 0, 0, 0.5);
     aspect-ratio: 16 / 9;
-    transition: box-shadow 0.3s ease;
-
-    &:hover {
-      box-shadow:
-        0 24px 60px rgba(86, 33, 39, 0.22),
-        0 6px 16px rgba(0, 0, 0, 0.12);
-    }
   }
 
-  /* LOGO superpuesto dentro del marco */
   &__logo {
     position: absolute;
     top: 14px;
@@ -210,16 +203,15 @@
     width: 52px;
     height: 52px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(15, 15, 18, 0.85);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 6px;
     pointer-events: none;
-    transition: transform 0.3s ease;
 
     img {
       width: 100%;
@@ -235,7 +227,7 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    color: var(--kiert-vino, #562127);
+    color: var(--kiert-menta, #4ade80);
 
     svg {
       width: 26px;
@@ -243,7 +235,6 @@
     }
   }
 
-  /* EL VIDEO se adapta al marco */
   &__player {
     position: absolute;
     inset: 0;
@@ -257,29 +248,30 @@
 }
 
 /* ============================================
-   SERVICIOS
+   SERVICIOS (3 tarjetas)
    ============================================ */
 .servicios {
-  padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 64px);
-  background: var(--kiert-fondo, #ffffff);
+  padding: clamp(32px, 6vw, 88px) clamp(16px, 5vw, 64px);
+  background: var(--kiert-fondo, #0f0f12);
 
   &__head {
     max-width: 640px;
-    margin: 0 auto 48px;
+    margin: 0 auto 40px;
     text-align: center;
+    padding: 0 8px;
 
     h2 {
       margin: 0 0 12px;
-      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
       font-weight: 800;
-      color: var(--kiert-vino, #562127);
+      color: var(--kiert-menta, #4ade80);
       letter-spacing: -0.4px;
     }
 
     p {
       margin: 0;
-      color: var(--kiert-texto-secundario, #4a4a4a);
-      font-size: 1rem;
+      color: var(--kiert-texto-secundario, #b8b8be);
+      font-size: clamp(0.85rem, 2vw, 1rem);
       line-height: 1.6;
     }
   }
@@ -287,16 +279,19 @@
   .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 1200px;
+    gap: 16px;
+    max-width: 1000px;
     margin: 0 auto;
 
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
+    /* Tablet: 3 columnas (aprovecha el espacio) */
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
+    /* Escritorio: 3 columnas con más aire */
     @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
   }
 
@@ -304,87 +299,41 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background: var(--kiert-superficie, #ffffff);
-    border: 1px solid var(--kiert-borde, #e5e5e5);
+    background: var(--kiert-superficie, #1a1a1f);
+    border: 1px solid var(--kiert-borde, #2a2a30);
     border-radius: 14px;
-    padding: 28px 24px;
-    transition:
-      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.3s ease,
-      border-color 0.3s ease;
-    will-change: transform;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 14px;
-      padding: 1px;
-      background: linear-gradient(
-        135deg,
-        transparent 40%,
-        rgba(196, 132, 145, 0.6) 100%
-      );
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(86, 33, 39, 0.12);
-      border-color: transparent;
-
-      &::before {
-        opacity: 1;
-      }
-
-      .card__icon {
-        background: var(--kiert-rosa, #c48491);
-        color: #ffffff;
-        transform: scale(1.05);
-      }
-    }
+    padding: clamp(20px, 4vw, 28px) clamp(16px, 4vw, 24px);
 
     &__icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
+      width: clamp(40px, 8vw, 48px);
+      height: clamp(40px, 8vw, 48px);
       border-radius: 12px;
-      background: rgba(196, 132, 145, 0.12);
-      color: var(--kiert-vino, #562127);
-      margin-bottom: 20px;
-      transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+      background: rgba(74, 222, 128, 0.12);
+      color: var(--kiert-menta, #4ade80);
+      margin-bottom: clamp(14px, 3vw, 20px);
 
       svg {
-        width: 24px;
-        height: 24px;
+        width: clamp(20px, 4vw, 24px);
+        height: clamp(20px, 4vw, 24px);
       }
     }
 
     h3 {
       margin: 0 0 10px;
-      font-size: 1.08rem;
+      font-size: clamp(1rem, 2.5vw, 1.08rem);
       font-weight: 700;
-      color: var(--kiert-vino, #562127);
+      color: var(--kiert-texto, #f5f5f7);
       letter-spacing: -0.2px;
     }
 
     p {
       margin: 0;
-      font-size: 0.93rem;
+      font-size: clamp(0.85rem, 2vw, 0.93rem);
       line-height: 1.6;
-      color: var(--kiert-texto-secundario, #4a4a4a);
+      color: var(--kiert-texto-secundario, #b8b8be);
     }
   }
 }
@@ -393,38 +342,40 @@
    CTA FINAL
    ============================================ */
 .cta {
-  padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 64px);
+  padding: clamp(32px, 6vw, 88px) clamp(16px, 5vw, 64px);
   background:
-    linear-gradient(135deg, rgba(86, 33, 39, 0.97), rgba(120, 45, 55, 0.97)),
-    var(--kiert-vino, #562127);
+    linear-gradient(135deg, rgba(15, 15, 18, 0.97), rgba(26, 26, 31, 0.97)),
+    var(--kiert-superficie, #1a1a1f);
   color: #ffffff;
+  border-top: 1px solid var(--kiert-borde, #2a2a30);
 
   &__inner {
     max-width: 640px;
     margin: 0 auto;
     text-align: center;
+    padding: 0 8px;
   }
 
   h2 {
     margin: 0 0 14px;
-    font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+    font-size: clamp(1.2rem, 3.5vw, 1.85rem);
     font-weight: 800;
     letter-spacing: -0.3px;
-    color: #ffffff;
+    color: var(--kiert-menta, #4ade80);
   }
 
   p {
     margin: 0 auto 28px;
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--kiert-texto-secundario, #b8b8be);
     max-width: 480px;
   }
 
   &__button {
-    --background: #ffffff;
-    --background-hover: #f6f6f6;
-    --color: var(--kiert-vino, #562127);
+    --background: var(--kiert-menta, #4ade80);
+    --background-hover: var(--kiert-menta-hover, #22c55e);
+    --color: #0f0f12;
     --border-radius: 10px;
     --padding-start: 26px;
     --padding-end: 20px;
@@ -435,58 +386,35 @@
     font-weight: 700;
     letter-spacing: 0.4px;
     text-transform: none;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 28px rgba(74, 222, 128, 0.3);
+    font-size: clamp(0.85rem, 2vw, 1rem);
 
     svg {
       margin-left: 8px;
-      transition: transform 0.25s ease;
-    }
-
-    &:hover svg {
-      transform: translateX(4px);
     }
   }
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE EXTRA (para pantallas muy pequeñas)
    ============================================ */
-@media (max-width: 768px) {
-  .video__frame {
-    max-width: 100%;
-    border-radius: 12px;
+@media (max-width: 360px) {
+  .hero__title {
+    font-size: 1.4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.85rem;
   }
 
   .video__logo {
-    width: 42px;
-    height: 42px;
-    top: 10px;
-    left: 10px;
+    width: 36px;
+    height: 36px;
+    top: 8px;
+    left: 8px;
   }
-}
 
-/* ============================================
-   ANIMACIONES
-   ============================================ */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ============================================
-   ACCESIBILIDAD
-   ============================================ */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+  .servicios .card {
+    padding: 16px 14px;
   }
 }

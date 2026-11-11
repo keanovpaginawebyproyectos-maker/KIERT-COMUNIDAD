@@ -28,9 +28,17 @@ export class ContactoPage {
   redes = [
     {
       nombre: 'WhatsApp',
-      usuario: '+51 940699545',           // 👈 cambia por tu número real
+      usuario: '+51 940699545',
       url: 'https://wa.me/51940699545',
+      tipo: 'whatsapp', // Faltaba esta línea
       color: '#25D366',
+    },
+    {
+      nombre: 'Discord',
+      usuario: 'Únete a la comunidad',
+      url: 'https://discord.gg/tu-invitacion', // Cambia esto por tu enlace real de Discord
+      tipo: 'discord',
+      color: '#5865F2',
     },
     {
       nombre: 'Facebook',

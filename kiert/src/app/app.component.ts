@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
     { title: 'Contacto', url: '/contacto', icon: 'mail-outline' },
   ];
 
-  isDark = false;
+  isDark = true; // <-- Por defecto oscuro
 
   constructor() {
     addIcons({
@@ -69,13 +69,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const saved = localStorage.getItem('kiert-theme');
-    if (saved === 'dark') {
-      this.isDark = true;
-    } else if (saved === 'light') {
+    
+    if (saved === 'light') {
       this.isDark = false;
     } else {
-      this.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Si no hay nada guardado o es 'dark', forzamos oscuro
+      this.isDark = true;
     }
+    
     this.applyTheme();
   }
 

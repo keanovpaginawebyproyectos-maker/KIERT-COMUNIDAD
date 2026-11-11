@@ -38,9 +38,9 @@ import {
 export class ProductosPage {
   productos = [
     {
-      nombre: 'proyecto grande',
+      nombre: 'Plataforma de Comunidad',
       descripcion:
-        'Página web de una comunidad',
+        'Sistema web para gestión de comunidades con perfiles, publicaciones y moderación.',
       categoria: 'Web',
       imagen: 'assets/images/productos/sistema-de-comunidad.jpg',
       caracteristicas: [
@@ -50,39 +50,39 @@ export class ProductosPage {
       ],
     },
     {
-      nombre: 'E-commerce',
+      nombre: 'E-commerce Textil',
       descripcion:
-        'Tienda online de una empresa textil',
+        'Tienda online con catálogo, carrito de compras y solicitud de cotizaciones.',
       categoria: 'Web',
       imagen: 'assets/images/productos/sistema-karnil.jpg',
       caracteristicas: [
-        'Solicitud de cotizacion',
-        'wsp',
-        'Gestión de productos',
+        'Catálogo de productos',
+        'Solicitud de cotización',
+        'Integración con WhatsApp',
       ],
     },
     {
-      nombre: 'pagina web',
+      nombre: 'Sistema de Pedidos',
       descripcion:
-        'sistema de gestion de pedidos para una cafeteria',
-      categoria: 'web',
+        'Plataforma para gestión de pedidos en cafeterías, con seguimiento en tiempo real.',
+      categoria: 'Web',
       imagen: 'assets/images/productos/yrelis.jpg',
       caracteristicas: [
-        'adptable',
-        'hacer pedidos',
-        'solicitud de pedidos',
+        'Interfaz adaptable',
+        'Registro de pedidos',
+        'Seguimiento de estado',
       ],
     },
     {
-      nombre: 'lading',
+      nombre: 'Landing Page Corporativa',
       descripcion:
-        'sistema ladingpára una empresa textil',
+        'Página de aterrizaje para empresa textil, enfocada en conversión y presentación de marca.',
       categoria: 'Empresarial',
       imagen: 'assets/images/productos/herliz.jpg',
       caracteristicas: [
-        'Awsp',
-        'Dproductos',
-        'fotos',
+        'Diseño atractivo',
+        'Formulario de contacto',
+        'Galería de productos',
       ],
     },
   ];

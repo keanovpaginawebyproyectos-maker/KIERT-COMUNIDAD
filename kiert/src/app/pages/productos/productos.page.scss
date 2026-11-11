@@ -1,17 +1,18 @@
 /* ============================================
    KIERT - Productos Styles
-   Adaptado a tema claro / oscuro
+   Diseño estático, sin animaciones, 100% responsive
+   Paleta: Verde Menta + Negro/Blanco
    ============================================ */
 
 :host {
   display: block;
-  background: var(--kiert-fondo, #ffffff);
-  color: var(--kiert-texto, #1a1a1a);
+  background: var(--kiert-fondo, #0f0f12);
+  color: var(--kiert-texto, #f5f5f7);
 }
 
 .kiert-content {
-  --background: var(--kiert-fondo, #ffffff);
-  --color: var(--kiert-texto, #1a1a1a);
+  --background: var(--kiert-fondo, #0f0f12);
+  --color: var(--kiert-texto, #f5f5f7);
   --padding-start: 0;
   --padding-end: 0;
   --padding-top: 0;
@@ -27,11 +28,11 @@
    CABECERA
    ============================================ */
 .productos-head {
-  padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 64px) clamp(24px, 4vw, 40px);
+  padding: clamp(32px, 6vw, 80px) clamp(16px, 5vw, 64px) clamp(20px, 4vw, 40px);
   text-align: center;
   background:
-    radial-gradient(1000px 400px at 90% 0%, rgba(196, 132, 145, 0.12), transparent 60%),
-    var(--kiert-fondo, #ffffff);
+    radial-gradient(1000px 400px at 90% 0%, rgba(74, 222, 128, 0.08), transparent 60%),
+    var(--kiert-fondo, #0f0f12);
 
   &__badge {
     display: inline-flex;
@@ -39,10 +40,10 @@
     gap: 8px;
     padding: 6px 14px;
     border-radius: 999px;
-    background: rgba(196, 132, 145, 0.14);
-    border: 1px solid rgba(196, 132, 145, 0.3);
-    color: var(--kiert-rosa, #c48491);
-    font-size: 0.76rem;
+    background: rgba(74, 222, 128, 0.14);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    color: var(--kiert-menta, #4ade80);
+    font-size: clamp(0.65rem, 1.5vw, 0.76rem);
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
@@ -51,17 +52,17 @@
 
   &__title {
     margin: 0 0 14px;
-    font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -0.5px;
-    color: var(--kiert-texto, #1a1a1a);
+    color: var(--kiert-texto, #f5f5f7);
 
     span {
       background: linear-gradient(
         135deg,
-        var(--kiert-rosa, #c48491),
-        var(--kiert-vino, #562127)
+        var(--kiert-menta, #4ade80),
+        var(--kiert-menta-hover, #22c55e)
       );
       -webkit-background-clip: text;
       background-clip: text;
@@ -73,9 +74,10 @@
   &__subtitle {
     margin: 0 auto;
     max-width: 600px;
-    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
     line-height: 1.65;
-    color: var(--kiert-texto-secundario, #4a4a4a);
+    color: var(--kiert-texto-secundario, #b8b8be);
+    padding: 0 8px;
   }
 }
 
@@ -83,11 +85,15 @@
    GRID PRODUCTOS
    ============================================ */
 .productos-grid {
-  padding: 0 clamp(16px, 4vw, 48px) clamp(40px, 6vw, 72px);
+  padding: 0 clamp(12px, 4vw, 48px) clamp(32px, 6vw, 72px);
 
   ion-col {
-    padding: 12px;
+    padding: 8px;
     display: flex;
+
+    @media (min-width: 768px) {
+      padding: 12px;
+    }
   }
 }
 
@@ -99,34 +105,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: var(--kiert-superficie, #ffffff);
-  border: 1px solid var(--kiert-borde, #e5e5e5);
+  background: var(--kiert-superficie, #1a1a1f);
+  border: 1px solid var(--kiert-borde, #2a2a30);
   border-radius: 16px;
   overflow: hidden;
-  transition:
-    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-  will-change: transform;
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(86, 33, 39, 0.14);
-    border-color: rgba(196, 132, 145, 0.45);
-
-    .producto-card__media ion-img {
-      transform: scale(1.05);
-    }
-
-    .producto-card__icon {
-      background: var(--kiert-rosa, #c48491);
-      color: #ffffff;
-    }
-
-    .producto-card__cta svg {
-      transform: translateX(4px);
-    }
-  }
 
   /* ----- MEDIA ----- */
   &__media {
@@ -135,8 +117,8 @@
     aspect-ratio: 16 / 10;
     background: linear-gradient(
       135deg,
-      rgba(196, 132, 145, 0.15),
-      rgba(86, 33, 39, 0.12)
+      rgba(74, 222, 128, 0.15),
+      rgba(15, 15, 18, 0.12)
     );
     overflow: hidden;
 
@@ -144,7 +126,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
       --background: transparent;
     }
   }
@@ -154,15 +135,14 @@
     top: 12px;
     left: 12px;
     padding: 5px 12px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(6px);
-    color: var(--kiert-vino, #562127);
-    font-size: 0.7rem;
+    background: var(--kiert-menta, #4ade80);
+    color: #0f0f12;
+    font-size: clamp(0.6rem, 1.5vw, 0.7rem);
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     border-radius: 999px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   /* ----- BODY ----- */
@@ -170,43 +150,40 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 24px 22px 22px;
+    padding: clamp(18px, 3vw, 24px) clamp(16px, 3vw, 22px) clamp(16px, 3vw, 22px);
   }
 
   &__icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: clamp(40px, 8vw, 44px);
+    height: clamp(40px, 8vw, 44px);
     border-radius: 11px;
-    background: rgba(196, 132, 145, 0.14);
-    color: var(--kiert-vino, #562127);
+    background: rgba(74, 222, 128, 0.14);
+    color: var(--kiert-menta, #4ade80);
     margin-bottom: 16px;
-    transition:
-      background 0.3s ease,
-      color 0.3s ease;
 
     svg {
-      width: 22px;
-      height: 22px;
+      width: clamp(20px, 4vw, 22px);
+      height: clamp(20px, 4vw, 22px);
     }
   }
 
   &__title {
     margin: 0 0 10px;
-    font-size: 1.18rem;
+    font-size: clamp(1rem, 2.5vw, 1.18rem);
     font-weight: 800;
     line-height: 1.3;
     letter-spacing: -0.3px;
-    color: var(--kiert-vino, #562127);
+    color: var(--kiert-texto, #f5f5f7);
   }
 
   &__desc {
     margin: 0 0 18px;
-    font-size: 0.94rem;
+    font-size: clamp(0.85rem, 2vw, 0.94rem);
     line-height: 1.6;
-    color: var(--kiert-texto-secundario, #4a4a4a);
+    color: var(--kiert-texto-secundario, #b8b8be);
   }
 
   /* ----- FEATURES ----- */
@@ -222,14 +199,14 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.88rem;
-      color: var(--kiert-texto, #1a1a1a);
+      font-size: clamp(0.8rem, 2vw, 0.88rem);
+      color: var(--kiert-texto, #f5f5f7);
       font-weight: 500;
 
       svg {
         flex-shrink: 0;
-        color: var(--kiert-rosa, #c48491);
-        background: rgba(196, 132, 145, 0.12);
+        color: var(--kiert-menta, #4ade80);
+        background: rgba(74, 222, 128, 0.12);
         border-radius: 50%;
         padding: 3px;
         width: 18px;
@@ -245,20 +222,15 @@
     align-items: center;
     gap: 6px;
     padding-top: 16px;
-    border-top: 1px solid var(--kiert-borde, #ededed);
-    color: var(--kiert-vino, #562127);
+    border-top: 1px solid var(--kiert-borde, #2a2a30);
+    color: var(--kiert-menta, #4ade80);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     text-decoration: none;
     letter-spacing: 0.2px;
-    transition: color 0.25s ease;
 
     svg {
-      transition: transform 0.25s ease;
-    }
-
-    &:hover {
-      color: var(--kiert-rosa, #c48491);
+      color: var(--kiert-menta, #4ade80);
     }
   }
 }
@@ -267,38 +239,40 @@
    CTA FINAL
    ============================================ */
 .productos-cta {
-  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px);
+  padding: clamp(32px, 6vw, 72px) clamp(16px, 5vw, 64px);
   background:
-    linear-gradient(135deg, rgba(86, 33, 39, 0.97), rgba(120, 45, 55, 0.97)),
-    var(--kiert-vino, #562127);
+    linear-gradient(135deg, rgba(15, 15, 18, 0.97), rgba(26, 26, 31, 0.97)),
+    var(--kiert-superficie, #1a1a1f);
   color: #ffffff;
+  border-top: 1px solid var(--kiert-borde, #2a2a30);
 
   &__inner {
     max-width: 620px;
     margin: 0 auto;
     text-align: center;
+    padding: 0 8px;
   }
 
   h2 {
     margin: 0 0 12px;
-    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-size: clamp(1.2rem, 3.5vw, 1.85rem);
     font-weight: 800;
     letter-spacing: -0.3px;
-    color: #ffffff;
+    color: var(--kiert-menta, #4ade80);
   }
 
   p {
     margin: 0 auto 26px;
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--kiert-texto-secundario, #b8b8be);
     max-width: 480px;
   }
 
   &__button {
-    --background: #ffffff;
-    --background-hover: #f6f6f6;
-    --color: var(--kiert-vino, #562127);
+    --background: var(--kiert-menta, #4ade80);
+    --background-hover: var(--kiert-menta-hover, #22c55e);
+    --color: #0f0f12;
     --border-radius: 10px;
     --padding-start: 24px;
     --padding-end: 20px;
@@ -309,40 +283,32 @@
     font-weight: 700;
     letter-spacing: 0.4px;
     text-transform: none;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 28px rgba(74, 222, 128, 0.3);
+    font-size: clamp(0.85rem, 2vw, 1rem);
 
     svg {
       margin-left: 8px;
-      transition: transform 0.25s ease;
-    }
-
-    &:hover svg {
-      transform: translateX(4px);
     }
   }
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE EXTRA (pantallas muy pequeñas)
    ============================================ */
-@media (max-width: 480px) {
+@media (max-width: 360px) {
+  .productos-head__title {
+    font-size: 1.35rem;
+  }
+
+  .productos-head__subtitle {
+    font-size: 0.85rem;
+  }
+
   .producto-card__body {
-    padding: 20px 18px 18px;
+    padding: 16px 14px 14px;
   }
 
   .producto-card__title {
-    font-size: 1.08rem;
-  }
-}
-
-/* ============================================
-   ACCESIBILIDAD
-   ============================================ */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    font-size: 1rem;
   }
 }

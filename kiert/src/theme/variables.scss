@@ -1,31 +1,31 @@
 /* ============================================
    KIERT - Variables de Tema
-   Paleta de marca + Colores Ionic base
+   Paleta unificada: Menta + Neutros (sin rosa)
    ============================================ */
 
 :root {
   /* ---------- Paleta KIERT ---------- */
   --kiert-white: #ffffff;
-  --kiert-rosa: #cb7a83;
-  --kiert-vino: #562127;
+  --kiert-menta: #4ade80;
+  --kiert-menta-hover: #22c55e;
   --kiert-gris-oscuro: #595552;
   --kiert-gris-medio: #78756e;
   --kiert-negro: #000000;
 
-  /* ---------- Colores Ionic ---------- */
-  --ion-color-primary: #cb7a83;
-  --ion-color-primary-rgb: 203, 122, 131;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #b36b73;
-  --ion-color-primary-tint: #d0888f;
+  /* ---------- Colores Ionic (Menta en lugar de rosa) ---------- */
+  --ion-color-primary: #4ade80;
+  --ion-color-primary-rgb: 74, 222, 128;
+  --ion-color-primary-contrast: #0f0f12;
+  --ion-color-primary-contrast-rgb: 15, 15, 18;
+  --ion-color-primary-shade: #22c55e;
+  --ion-color-primary-tint: #6ee7a0;
 
-  --ion-color-secondary: #562127;
-  --ion-color-secondary-rgb: 86, 33, 39;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #4b1d22;
-  --ion-color-secondary-tint: #67373d;
+  --ion-color-secondary: #4ade80;
+  --ion-color-secondary-rgb: 74, 222, 128;
+  --ion-color-secondary-contrast: #0f0f12;
+  --ion-color-secondary-contrast-rgb: 15, 15, 18;
+  --ion-color-secondary-shade: #22c55e;
+  --ion-color-secondary-tint: #6ee7a0;
 
   --ion-color-tertiary: #78756e;
   --ion-color-tertiary-rgb: 120, 117, 110;
